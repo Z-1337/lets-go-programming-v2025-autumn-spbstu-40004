@@ -1,7 +1,5 @@
 package maxheap
 
-import "container/heap"
-
 type MaxHeap []int
 
 func (maxHeap *MaxHeap) Len() int {
