@@ -17,7 +17,7 @@ func main() {
 		panic("Reading error: " + err.Error())
 	}
 
-	currencies.Allcurrencies = data.Sort(currencies.AllCurrencies)
+	currencies.AllCurrencies = currencyparser.Sort(currencies.AllCurrencies)
 
 	err = currencymanager.Write(cfg.Output, currencies)
 	if err != nil {
