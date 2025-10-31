@@ -1,8 +1,6 @@
 package temperature
 
-import (
-	"errors"
-)
+import "errors"
 
 var (
 	ErrInvalidOp = errors.New("invalid operator")
