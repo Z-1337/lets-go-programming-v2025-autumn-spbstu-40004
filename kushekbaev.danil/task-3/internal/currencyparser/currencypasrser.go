@@ -2,7 +2,6 @@ package currencyparser
 
 import (
 	"encoding/xml"
-	"fmt"
 	"sort"
 	"strconv"
 	"strings"
@@ -16,7 +15,7 @@ type Currency struct {
 	Value    DotFloat `json:"value"     xml:"Value"`
 }
 
-type Currency struct {
+type Currencies struct {
 	AllCurrencies []Currency `xml:"Currency"`
 }
 
