@@ -15,8 +15,8 @@ const (
 	directoryPermission = 0o755
 )
 
-func Read(path string) (currencies.AllCurrencies, error) {
-	var currenciesData currencies.AllCurrencies
+func Read(path string) (currencyparser.Currencies, error) {
+	var currenciesData currencyparser.Currencies
 
 	file, err := os.Open(path)
 	if err != nil {
@@ -39,8 +39,8 @@ func Read(path string) (currencies.AllCurrencies, error) {
 	return currenciesData, nil
 }
 
-func Write(path string, currencies currencies.AllCurrencies) error {
-	data, err := json.MarshalIndent(currencies.AllCurrencies, "", "\t")
+func Write(path string, currencies currencyparser.Currencies) error {
+	data, err := json.MarshalIndent(currencies, "", "\t")
 	if err != nil {
 		return err
 	}
