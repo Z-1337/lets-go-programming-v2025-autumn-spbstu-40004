@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/Z-1337/task-3/internal/currencyparser"
 	"golang.org/x/net/html/charset"
 )
 

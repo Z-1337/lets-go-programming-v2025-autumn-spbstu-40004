@@ -3,7 +3,6 @@ package cfgreader
 import (
 	"errors"
 	"flag"
-	"fmt"
 	"os"
 
 	"gopkg.in/yaml.v2"
