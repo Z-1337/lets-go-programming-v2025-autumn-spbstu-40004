@@ -21,7 +21,7 @@ type Currencies struct {
 
 func Sort(currencies []Currency) []Currency {
 	sort.Slice(currencies, func(i, j int) bool {
-		return currencies[i].Currency > currencies[j].Currency
+		return currencies[i].Value > currencies[j].Value
 	})
 
 	return currencies
