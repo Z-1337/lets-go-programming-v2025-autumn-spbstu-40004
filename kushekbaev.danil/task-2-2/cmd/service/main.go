@@ -2,52 +2,52 @@ package main
 
 import (
 	"container/heap"
-  "fmt"
+	"fmt"
 
-  "github.com/Z-1337/task-2-2/internal/maxheap"
+	"github.com/Z-1337/task-2-2/internal/maxheap"
 )
 
 func main() {
-  var (
-    amount     uint
-    priority   int
-    preference uint
-  )
+	var (
+		amount     uint
+		priority   int
+		preference uint
+	)
 
-  _, err := fmt.Scan(&amount)
-  if err != nil {
-    fmt.Println("Error while reading amount of meals")
+	_, err := fmt.Scan(&amount)
+	if err != nil {
+		fmt.Println("Error while reading amount of meals")
 
-    return
-  }
+		return
+	}
 
-  preferences := &maxheap.MaxHeap{}
-  heap.Init(preferences)
+	preferences := &maxheap.MaxHeap{}
+	heap.Init(preferences)
 
-  for range amount {
-    _, err = fmt.Scan(&priority)
-    if err != nil {
-      fmt.Println("Error while reading meal priority")
+	for range amount {
+		_, err = fmt.Scan(&priority)
+		if err != nil {
+			fmt.Println("Error while reading meal priority")
 
-      return
-    }
+			return
+		}
 
-    heap.Push(preferences, priority)
-  }
+		heap.Push(preferences, priority)
+	}
 
-  _, err = fmt.Scan(&preference)
-  if err != nil {
-    fmt.Println("Error while reading meal preference")
+	_, err = fmt.Scan(&preference)
+	if err != nil {
+		fmt.Println("Error while reading meal preference")
 
-    return
-  }
+		return
+	}
 
-  for range preference - 1 {
-    heap.Pop(preferences)
-  }
+	for range preference - 1 {
+		heap.Pop(preferences)
+	}
 
-  result, ok := heap.Pop(preferences).(int)
-  if ok {
-    fmt.Println(result)
-  }
+	result, ok := heap.Pop(preferences).(int)
+	if ok {
+		fmt.Println(result)
+	}
 }
