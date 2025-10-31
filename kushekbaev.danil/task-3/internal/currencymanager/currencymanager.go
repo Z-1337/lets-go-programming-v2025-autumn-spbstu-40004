@@ -3,7 +3,6 @@ package currencymanager
 import (
 	"encoding/json"
 	"encoding/xml"
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -16,8 +15,8 @@ const (
 	directoryPermission = 0o755
 )
 
-func Read(path string) (data.Currencies, error) {
-	var currenciesData data.Currencies
+func Read(path string) (currencyparser.Currencies, error) {
+	var currenciesData currencyparser.Currencies
 
 	file, err := os.Open(path)
 	if err != nil {
@@ -40,7 +39,7 @@ func Read(path string) (data.Currencies, error) {
 	return currenciesData, nil
 }
 
-func Write(path string, currencies data.Currencies) error {
+func Write(path string, currencies currencyparser.Currencies) error {
 	data, err := json.MarshalIndent(currencies.AllCurrencies, "", "\t")
 	if err != nil {
 		return err
